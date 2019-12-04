@@ -20,15 +20,13 @@ exemple Zstring.nim
         proc `$`*(a: Zoned): string
     
   - egal a = s
-    
-    proc `:=`*(a : Zoned ; s : string)
+        proc `:=`*(a : Zoned ; s : string)
     
   - move a = a + s
-    
-    proc `+=`*(a : Zoned ; s : string)     
+        proc `+=`*(a : Zoned ; s : string)     
 
   - movel a = s + a
-    proc `=+`*(a : Zoned ; s : string)
+        proc `=+`*(a : Zoned ; s : string)
 
   - zaddSub a = SubStr( s, x ,y)
     proc zaddSub*(a : Zoned ; s : string ; x , l: int)
