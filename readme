@@ -6,10 +6,10 @@ exemple Zstring.nim
 - permet de definir le nombre ce caractères
 - prend en charge l'Unicode
 
-```type 
+type 
   Zoned* = ref object
     len: int 
-    data: string```
+    data: string
 
 1. Fonction
 
