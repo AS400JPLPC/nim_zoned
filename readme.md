@@ -14,12 +14,10 @@ exemple Zstring.nim
 1. Fonction
 
   - define varChar[x] for SQL format
-    
-    proc newZoned*(l: int) :Zoned
+        proc newZoned*(l: int) :Zoned
     
   - Convert Zoned to VarChar for SQL format
-    
-    proc `$`*(a: Zoned): string
+        proc `$`*(a: Zoned): string
     
   - egal a = s
     
