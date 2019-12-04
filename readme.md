@@ -6,23 +6,27 @@ exemple Zstring.nim
 - permet de definir le nombre ce caractères
 - prend en charge l'Unicode
 
-type 
+```type 
   Zoned* = ref object
     len: int 
-    data: string
+    data: string```
 
 1. Fonction
 
   - define varChar[x] for SQL format
+    
     proc newZoned*(l: int) :Zoned
     
   - Convert Zoned to VarChar for SQL format
+    
     proc `$`*(a: Zoned): string
     
   - egal a = s
+    
     proc `:=`*(a : Zoned ; s : string)
     
   - move a = a + s
+    
     proc `+=`*(a : Zoned ; s : string)     
 
   - movel a = s + a
