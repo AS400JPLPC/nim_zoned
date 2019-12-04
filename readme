@@ -1,7 +1,7 @@
 Définition varchar compatible avec SQL  pour la gestion d'entreprise
 exemple Zstring.nim
 
-# zoned
+#zoned
 
 - permet de definir le nombre ce caractères
 - prend en charge l'Unicode
