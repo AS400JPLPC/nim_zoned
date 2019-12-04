@@ -29,49 +29,49 @@ exemple Zstring.nim
         proc `=+`*(a : Zoned ; s : string)
 
   - zaddSub a = SubStr( s, x ,y)
-    proc zaddSub*(a : Zoned ; s : string ; x , l: int)
+        proc zaddSub*(a : Zoned ; s : string ; x , l: int)
 
   - addSub  a +=  a +  SubStr( s, x ,y)
-    proc addSub*(a : Zoned ; s : string ; x , l: int)
+        proc addSub*(a : Zoned ; s : string ; x , l: int)
 
   - Upper
-    proc toUpper*(a :Zoned)
+        proc toUpper*(a :Zoned)
 
   - Lower
-    proc toLower*(a :Zoned)
+        proc toLower*(a :Zoned)
 
   - capitalize
-    proc capitalize*(a :Zoned)
+        proc capitalize*(a :Zoned)
 
   - title
-    proc title*(a :Zoned)
+        proc title*(a :Zoned)
 
   - strip
-    proc strip*(a :Zoned)
+        proc strip*(a :Zoned)
 
   - isAlpha
-    proc isAlpha*(a :Zoned) : bool
+        proc isAlpha*(a :Zoned) : bool
     
   - isSpace
-    proc isSpace*(a :Zoned) : bool    
+        proc isSpace*(a :Zoned) : bool    
     
   - isData
-    proc isData*(a :Zoned) : bool
+        proc isData*(a :Zoned) : bool
 
   - isDigit
-    proc isDigit*(a :Zoned) : boo
+        proc isDigit*(a :Zoned) : boo
 
   - isReg ex: "^\\d{0,3}\\.\\d{0,2}$"
-    proc isReg*(a :Zoned, s :string) : bool 
+        proc isReg*(a :Zoned, s :string) : bool 
 
   - align
-    proc align*(a :Zoned)
+        proc align*(a :Zoned)
 
   - alignLeft
-    proc alignLeft*(a :Zoned)
+        proc alignLeft*(a :Zoned)
    
   - clear
-    proc clear*(a : Zoned)
+        proc clear*(a : Zoned)
 
 2. contrôle
 
