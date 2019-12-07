@@ -12,7 +12,7 @@ exemple Zstring.nim
 
 ```type 
   Zoned* = ref object
-    len: int 
+    lng: int 
     data: string```
 
 1. Fonction
