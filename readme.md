@@ -7,7 +7,7 @@ exemple Zstring.nim
 - prend en charge l'Unicode
 
 - 2019/12/07 change len->lng
-- add recupère lng , nbrcar , type
+- retrieves  --> lng() , nbrcar() , kind()
 - contrôle import
 
 ```type 
