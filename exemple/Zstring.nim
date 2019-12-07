@@ -1,20 +1,19 @@
-import typeinfo
 import strformat
-include zoned
+import Zoned
 
 
 echo "____"
 var Nom = newZoned(10)
-echo Nom.len
+echo Nom.lng
 Nom:="toto"
-echo Nom.data
+echo $Nom
 
 echo "____"
 var Nomx = newZoned(5)
 Nomx:="àè}4"
 echo $Nomx
-echo Nomx.data.runeLen()
-echo Nom.data.runeLen()
+echo Nomx.nbrcar
+echo Nom.nbrcar
 
 
 echo "____"
@@ -52,7 +51,7 @@ echo fmt"{$Zdatesys}...clear"
 
 
 echo "____"
-echo kind(toAny(Nomx.data))
+echo kind(Nomx)
 
 echo "____"
 var txt0 = newZoned(15)
@@ -228,3 +227,10 @@ echo fmt"{txt0.isReg(regt)}...txt0.isReg()...{$txt0}"
 ##isReg "^\\d{0,3}\\.\\d{0,2}$"
 txt0:="1.235"
 echo fmt"{txt0.isReg(regt)}...txt0.isReg()...{$txt0}"
+
+
+var C0NOM = newZoned(30)
+C0NOM := "JPL"
+echo $C0NOM
+# libérer la mémoire: 
+C0NOM = nil
