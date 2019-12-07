@@ -3,7 +3,7 @@ exemple Zstring.nim
 
 # zoned
 
-- permet de definir le nombre de caractères d'un string (c'est limites)
+- permet de definir le nombre de caractères d'un string (ses limites)
 - prend en charge l'Unicode
 
 - 2019/12/07 change len->lng
