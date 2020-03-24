@@ -3,19 +3,32 @@ exemple Zstring.nim
 
 # zoned
 
-- permet de definir le nombre de caractères d'un string (c'est limites)
+- permet de definir le nombre de caractères d'un string (ses limites)
 - prend en charge l'Unicode
+
+- 2019/12/07 change len->lng
+- retrieves  --> lng() , nbrcar() , kind()
+- contrôle import
 
 ```type 
   Zoned* = ref object
-    len: int 
+    lng: int 
     data: string```
 
 1. Fonction
 
   - define varChar[x] for SQL format
         proc newZoned*(l: int) :Zoned
-    
+  
+  - getter of len define
+        proc lng*(a: Zoned): int
+  
+  - getter of nbr car réel prise en charge unicode
+        proc nbrcar*(a: Zoned): int
+        
+  - getter type
+        proc kind*(a: Zoned): AnyKind
+  
   - Convert Zoned to VarChar for SQL format
         proc `$`*(a: Zoned): string
     

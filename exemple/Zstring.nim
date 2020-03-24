@@ -60,10 +60,15 @@ txt0:="abce"
 txt1:="ABCE"
 
 echo fmt"{txt0== $txt1 }  abce = ABCE"
+<<<<<<< HEAD
 
 echo "____"
 txt1:="abce"
+=======
+>>>>>>> 193f1d93cf29bf165256b203b71c2538d2560c3c
 
+echo "____"
+txt1:="abce"
 echo fmt"{txt0== $txt1 }  abce = abce"
 
 
