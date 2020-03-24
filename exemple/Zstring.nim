@@ -14,7 +14,6 @@ echo $Nomx
 echo Nomx.nbrcar
 echo Nom.nbrcar
 
-
 echo "____"
 Nomx:="T"
 echo $Nomx

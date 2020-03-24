@@ -65,10 +65,10 @@ exemple Zstring.nim
         proc isReg*(a :Zoned, s :string) : bool 
 
   - align
-        proc align*(a :Zoned) : string
+        proc align*(a :Zoned) : string 
 
   - alignLeft
-        proc alignLeft*(a :Zoned): string
+        proc alignLeft*(a :Zoned): string 
    
   - clear
         proc clear*(a : Zoned)
