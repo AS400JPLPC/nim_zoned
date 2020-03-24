@@ -1,5 +1,6 @@
 when not declared(unicode) :
   import unicode
+
 when not declared(re) :
   import std/[re]
 
@@ -7,21 +8,26 @@ when not declared(typeinfo) :
   import typeinfo
 
 
-
 when not declared(Zoned) :
   type 
     Zoned* = ref object of RootObj
       lng: int 
       data: string
+      nullable: bool
   
   ## define varChar[x] for SQL format
-  proc newZoned*(l: int) :Zoned =
+  proc newZoned*(l: int; nullable : bool=true) :Zoned =
     var r : Zoned
     new(r)
     r.lng = l
     r.data = ""
+    r.nullable = nullable
     return r
   
+  proc isBool*(a: Zoned): bool =
+    if a.nullable == true : return true
+    else : return false
+
   ## getter of len define
   proc lng*(a: Zoned): int =
     a.lng
@@ -30,13 +36,26 @@ when not declared(Zoned) :
   proc nbrcar*(a: Zoned): int =
     a.data.runeLen()
   
+  ## getter type
   proc kind*(a: Zoned): AnyKind =
     result = kind(toAny(a.data))
 
-  ## Convert Zoned to VarChar for SQL format
+  ## Convert Zoned to echo
   proc `$`*(a: Zoned): string =
     return a.data
-  
+
+  ## align
+  proc align*(a :Zoned):string =
+    var s :string  =align($a, a.lng)
+    return s
+
+  ## alignLeft
+  proc alignLeft*(a :Zoned):string =
+    var s :string  =alignLeft($a, a.lng)
+    return s
+
+
+
   ## egal a = s
   proc `:=`*(a : Zoned ; s : string) =
     a.data = ""
@@ -106,7 +125,7 @@ when not declared(Zoned) :
   ## title
   proc title*(a :Zoned) =
     a.data = title(a.data)
-  
+
   ## strip
   proc strip*(a :Zoned) =
     a.data = strip(a.data)
@@ -140,15 +159,7 @@ when not declared(Zoned) :
     if false == match(r ,re(s))  : return false
     return true
     
-  
-  ## align
-  proc align*(a :Zoned) =
-    a.data =align($a, a.lng)
-  
-  ## alignLeft
-  proc alignLeft*(a :Zoned) =
-    a.data =alignLeft($a, a.lng)
-  
+
   ## clear
   proc clear*(a : Zoned) =
     a.data = ""

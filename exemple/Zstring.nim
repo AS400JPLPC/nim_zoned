@@ -51,6 +51,7 @@ echo fmt"{$Zdatesys}...clear"
 
 
 echo "____"
+echo "type"
 echo kind(Nomx)
 
 echo "____"
@@ -58,9 +59,15 @@ var txt0 = newZoned(15)
 var txt1 = newZoned(15)
 
 txt0:="abce"
+txt1:="ABCE"
+
+echo fmt"{txt0== $txt1 }  abce = ABCE"
+
+echo "____"
 txt1:="abce"
 
 echo fmt"{txt0== $txt1 }  abce = abce"
+
 
 echo "____"
 txt1:="abcé"
@@ -192,12 +199,10 @@ txt0:=" "
 echo fmt"{txt0.isSpace()}  txt0.isSpace()...{$txt0}..."
 
 txt0:="jean"
-txt0.align()
-echo fmt"{$txt0}  txt0.align(15)"
+echo fmt"{$txt0.align()}  txt0.align(15)"
 
 txt0:="jean"
-txt0.alignleft()
-echo fmt"{$txt0}...txt0.alignleft(15)"
+echo fmt"{$txt0.alignleft()}...txt0.alignleft(15)"
 
 txt0:=""
 echo fmt"{txt0.isData()}...txt0.isData()...{$txt0}"

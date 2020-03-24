@@ -59,16 +59,16 @@ exemple Zstring.nim
         proc isData*(a :Zoned) : bool
 
   - isDigit
-        proc isDigit*(a :Zoned) : boo
+        proc isDigit*(a :Zoned) : bool
 
   - isReg ex: "^\\d{0,3}\\.\\d{0,2}$"
         proc isReg*(a :Zoned, s :string) : bool 
 
   - align
-        proc align*(a :Zoned)
+        proc align*(a :Zoned) :string
 
   - alignLeft
-        proc alignLeft*(a :Zoned)
+        proc alignLeft*(a :Zoned): string
    
   - clear
         proc clear*(a : Zoned)
