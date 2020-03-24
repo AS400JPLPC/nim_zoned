@@ -55,7 +55,6 @@ when not declared(Zoned) :
     return s
 
 
-
   ## egal a = s
   proc `:=`*(a : Zoned ; s : string) =
     a.data = ""

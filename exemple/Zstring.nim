@@ -1,7 +1,6 @@
 import strformat
 import Zoned
 
-
 echo "____"
 var Nom = newZoned(10)
 echo Nom.lng
