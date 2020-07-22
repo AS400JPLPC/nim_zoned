@@ -4,11 +4,44 @@ when not declared(unicode) :
 when not declared(re) :
   import std/[re]
 
-when not declared(typeinfo) :
-  import typeinfo
+when not declared(typetraits) :
+  import typetraits
 
 
 when not declared(Zoned) :
+  type 
+    AnyType = enum
+      tpNone = 0,                   ## invalid any
+      tpBool = 1,                   ## any represents a ``bool``
+      tpChar = 2,                   ## any represents a ``char``
+      tpEnum = 14,                  ## any represents an enum
+      tpArray = 16,                 ## any represents an array
+      tpObject = 17,                ## any represents an object
+      tpTuple = 18,                 ## any represents a tuple
+      tpSet = 19,                   ## any represents a set
+      tpRange = 20,                 ## any represents a range
+      tpPtr = 21,                   ## any represents a ptr
+      tpRef = 22,                   ## any represents a ref
+      tpSequence = 24,              ## any represents a sequence
+      tpProc = 25,                  ## any represents a proc
+      tpPointer = 26,               ## any represents a pointer
+      tpString = 28,                ## any represents a string
+      tpCString = 29,               ## any represents a cstring
+      tpInt = 31,                   ## any represents an int
+      tpInt8 = 32,                  ## any represents an int8
+      tpInt16 = 33,                 ## any represents an int16
+      tpInt32 = 34,                 ## any represents an int32
+      tpInt64 = 35,                 ## any represents an int64
+      tpFloat = 36,                 ## any represents a float
+      tpFloat32 = 37,               ## any represents a float32
+      tpFloat64 = 38,               ## any represents a float64
+      tpFloat128 = 39,              ## any represents a float128
+      tpUInt = 40,                  ## any represents an unsigned int
+      tpUInt8 = 41,                 ## any represents an unsigned int8
+      tpUInt16 = 42,                ## any represents an unsigned in16
+      tpUInt32 = 43,                ## any represents an unsigned int32
+      tpUInt64 = 44                 ## any represents an unsigned int64
+
   type 
     Zoned* = ref object of RootObj
       lng: int 
@@ -37,8 +70,69 @@ when not declared(Zoned) :
     a.data.runeLen()
   
   ## getter type
-  proc kind*(a: Zoned): AnyKind =
-    result = kind(toAny(a.data))
+  proc getType*(a: Zoned): AnyType =
+  
+    case name(type(a.data)) :
+      of "bool":
+        result = tpBool
+      of "char":
+        result = tpChar
+      of "enum": 
+        result = tpEnum
+      of "array":
+        result = tpArray
+      of "object":
+        result = tpObject
+      of "tuple":
+        result = tpTuple
+      of "set":
+        result = tpSet
+      of "eRange": 
+        result = tpRange
+      of "aptr":
+        result = tpPtr
+      of "ref":
+        result = tpRef
+      of "sequence":
+        result = tpSequence
+      of "proc":
+        result = tpProc
+      of "pointer":
+        result = tpPointer
+      of "string":
+        result = tpString
+      of "cstring":
+        result = tpCString
+      of "int":
+        result = tpInt
+      of "int8":
+        result = tpInt8
+      of "int16":
+        result = tpInt16
+      of "int32":
+        result = tpInt32
+      of "int64":
+        result = tpInt64
+      of "float":
+        result = tpFloat
+      of "float32":
+        result = tpFloat32
+      of "float64":
+        result = tpFloat64
+      of "float128":
+        result = tpFloat128
+      of "uint":
+        result = tpUInt
+      of "uint8":
+        result = tpUInt8
+      of "uint16":
+        result = tpUInt16
+      of "uint32":
+        result = tpUInt32
+      of "uint64":
+        result = tpUInt64
+      else : result = tpNone
+
 
   ## Convert Zoned to echo
   proc `$`*(a: Zoned): string =

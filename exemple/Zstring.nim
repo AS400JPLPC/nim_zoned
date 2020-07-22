@@ -1,6 +1,7 @@
 import strformat
 import Zoned
 
+
 echo "____"
 var Nom = newZoned(10)
 echo Nom.lng
@@ -13,6 +14,7 @@ Nomx:="àè}4"
 echo $Nomx
 echo Nomx.nbrcar
 echo Nom.nbrcar
+
 
 echo "____"
 Nomx:="T"
@@ -50,7 +52,7 @@ echo fmt"{$Zdatesys}...clear"
 
 echo "____"
 echo "type"
-echo kind(Nomx)
+echo getType(Nomx)
 
 echo "____"
 var txt0 = newZoned(15)
@@ -60,15 +62,10 @@ txt0:="abce"
 txt1:="ABCE"
 
 echo fmt"{txt0== $txt1 }  abce = ABCE"
-<<<<<<< HEAD
 
 echo "____"
 txt1:="abce"
-=======
->>>>>>> 193f1d93cf29bf165256b203b71c2538d2560c3c
 
-echo "____"
-txt1:="abce"
 echo fmt"{txt0== $txt1 }  abce = abce"
 
 

@@ -1,4 +1,4 @@
-packageName   = "Zoned"
+packageName   = "zoned"
 version       = "0.0.1"
 author        = "Status Research & Development Redefine STRING"
 description   = "Auteur de base https://github.com/AS400JPLPC/nim_zoned"

@@ -7,8 +7,13 @@ exemple Zstring.nim
 - prend en charge l'Unicode
 
 - 2019/12/07 change len->lng
-- retrieves  --> lng() , nbrcar() , kind()
+- retrieves  --> lng() , nbrcar() , getype()
 - contrôle import
+- 2020/07/22 correctif important lier à --gc:arc  + divers conséquence
+
+- 2020/07/22 correctif remove typeinfo use typetraits
+
+
 
 ```type 
   Zoned* = ref object
@@ -18,7 +23,7 @@ exemple Zstring.nim
 1. Fonction
 
   - define varChar[x] for SQL format
-        proc newZoned*(l: int) :Zoned
+        proc newZoned*(l: int; nullable : boll = true) :Zoned
   
   - getter of len define
         proc lng*(a: Zoned): int
@@ -27,7 +32,7 @@ exemple Zstring.nim
         proc nbrcar*(a: Zoned): int
         
   - getter type
-        proc kind*(a: Zoned): AnyKind
+        proc getType*(a: Zoned): Anytype
   
   - Convert Zoned to VarChar for SQL format
         proc `$`*(a: Zoned): string
